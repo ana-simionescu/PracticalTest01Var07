@@ -37,6 +37,14 @@ public class PracticalTest01Var07MainActivity extends AppCompatActivity {
     private class MessageBroadcastReceiver extends BroadcastReceiver {
         @Override
         public void onReceive(Context context, Intent intent) {
+            cell00 = (EditText) findViewById(R.id.cell00);
+            cell01 = (EditText) findViewById(R.id.cell01);
+            cell10 = (EditText) findViewById(R.id.cell10);
+            cell11 = (EditText) findViewById(R.id.cell11);
+            cell00.setText(intent.getIntExtra(Constants.CELL00, -1));
+            cell01.setText(intent.getIntExtra(Constants.CELL01, -1));
+            cell10.setText(intent.getIntExtra(Constants.CELL10, -1));
+            cell11.setText(intent.getIntExtra(Constants.CELL11, -1));
             Log.d(Constants.BROADCAST_RECEIVER_TAG, intent.getStringExtra(Constants.BROADCAST_RECEIVER_EXTRA));
         }
     }

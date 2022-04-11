@@ -30,8 +30,10 @@ public class ProcessingThread extends Thread {
     private void sendMessage() {
         Intent intent = new Intent();
         intent.setAction(Constants.ACTION_TYPE);
-        intent.putExtra(Constants.BROADCAST_RECEIVER_EXTRA,
-                new Date(System.currentTimeMillis()) + " " + "1");
+        intent.putExtra(Constants.CELL00, Math.random());
+        intent.putExtra(Constants.CELL01, Math.random());
+        intent.putExtra(Constants.CELL10, Math.random());
+        intent.putExtra(Constants.CELL11, Math.random());
         context.sendBroadcast(intent);
     }
 
